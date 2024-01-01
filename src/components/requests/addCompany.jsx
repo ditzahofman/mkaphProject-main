@@ -101,7 +101,7 @@ const AddCompany = () => {
           </div>
           <div class="form-group row">
           <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary">הוספת בית השקעה</button>
           </div>
   </div>
         </form>

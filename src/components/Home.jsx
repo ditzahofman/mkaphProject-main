@@ -6,6 +6,7 @@ import Login from './loging&signup/Loging'
 import AddCompany from './requests/addCompany';
 import NavBar from './navBar/navBar';
 import ViewCompanies from './requests/viewCompanies';
+import RequestForApproval from './requests/RequestForApproval';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ const Home = () => {
                 <Route exact element={<Login />} path="/"/>
                 <Route exact element={<AddCompany/>} path="/addCompany"/>
                 <Route exact element={<ViewCompanies/>} path="/viewCompanies"/>
+                <Route exact element={<RequestForApproval/>} path="/requestForApproval"/>
                 {/* <Route exact element={<Donors/>} path="/donors/*"/>
                 <Route exact element={<Search/>} path="/search"/>
                 <Route exact element={<ManageRouter/>} path="/manage/*"/>

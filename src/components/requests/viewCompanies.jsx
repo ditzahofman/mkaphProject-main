@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from '../../firebase';
-
+import Loading from '../loading';
 function ViewCompanies() {
   const [CompaniesData, setData] = useState(null);
   const [num,setNum]=useState(0)
@@ -26,9 +26,9 @@ function ViewCompanies() {
           });
       });
       setData(fetchedData);
+      setLoading(true)
       setActive(active)
       setDate(email)
-      console.log(fetchedData);
 
     } catch (error) {
       console.error("Error fetching documents:", error);
@@ -41,6 +41,7 @@ function ViewCompanies() {
   }, [data])
   return (
     <>
+      {loading?
       <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
@@ -54,15 +55,17 @@ function ViewCompanies() {
         <tbody>
         {CompaniesData&&CompaniesData.map((i) =>
           <tr>
-            <td>{i.date}</td>
-            <td>{i.status}</td>
-            <td>{i.email}</td>
-            <td>{i.name}</td>
-            <td>{i.num}</td>
+            <td key={i.oid}>{i.date}</td>
+            <td key={i.oid}>{i.status}</td>
+            <td key={i.oid}>{i.email}</td>
+            <td key={i.oid}>{i.name}</td>
+            <td key={i.oid}>{i.num}</td>
           </tr>
         ) }
         </tbody>
       </table>
+       :<Loading />}
+
     </>
   );
 }
