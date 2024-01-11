@@ -5,6 +5,7 @@ import 'firebase/database';
 class AppConfig {
   public port = 3001;
   public host = "localhost";
+  public isDevelopment = false;
   public helpPage = ''; //if you have
   public salesEmail = ''; // if you have
 }
