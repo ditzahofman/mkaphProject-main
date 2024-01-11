@@ -1,6 +1,4 @@
 import React, {useState,useEffect} from 'react';
-import {signOut } from "firebase/auth";
-import {auth} from '../firebase';
 import {useNavigate,Routes, Route } from 'react-router-dom';
 import Login from './loging&signup/Loging'
 import AddCompany from './requests/addCompany';
@@ -12,15 +10,15 @@ const Home = () => {
     const navigate = useNavigate();
     const [loading,setLoading]=useState(false)
 
-    const handleLogout = () => {               
-        signOut(auth).then(() => {
-        // Sign-out successful.
-            navigate("/");
-            console.log("Signed out successfully")
-        }).catch((error) => {
-        // An error happened.
-        });
-    }
+    // const handleLogout = () => {               
+    //     signOut(auth).then(() => {
+    //     // Sign-out successful.
+    //         navigate("/");
+    //         console.log("Signed out successfully")
+    //     }).catch((error) => {
+    //     // An error happened.
+    //     });
+    // }
 
 
    
@@ -29,7 +27,7 @@ const Home = () => {
             <div className="App">
             <NavBar></NavBar>
             <Routes>
-                <Route exact element={<Login />} path="/"/>
+                {/* <Route exact element={<Login />} path="/"/> */}
                 <Route exact element={<AddCompany/>} path="/addCompany"/>
                 <Route exact element={<ViewCompanies/>} path="/viewCompanies"/>
                 <Route exact element={<RequestForApproval/>} path="/requestForApproval"/>

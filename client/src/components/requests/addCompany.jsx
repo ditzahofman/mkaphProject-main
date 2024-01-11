@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import emailValidator from "email-validator";
-
-// import { getFirestore } from 'firebase/firestore';
-import { collection, query, where, addDoc, getDocs } from "firebase/firestore";
-import { db, auth } from '../../firebase';
 import moment from 'moment/moment';
-
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const AddCompany = () => {
-    // const db = getFirestore();
+    const navigate = useNavigate();
     const [num,setNum]=useState(0)
     const [loading,setLoading]=useState(false)
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const [active, setActive]=useState(false)
-
+    const [data,setData]=useState([])
 
     const handleSubmit=async (e) =>{
       e.preventDefault()
@@ -27,17 +23,27 @@ const AddCompany = () => {
       setNum(e.target.value)
       console.log(num);
       setLoading(true);
+      data={
+        oid:108,
+        num: num,
+        date: moment().format("MMM Do YY"),
+        email: email,
+        name: name,
+        status: active ? "פעיל": "לא פעיל" 
+      }
       try {
-          const docRef = await addDoc(collection(db, "InvestmentCompany"), {
-          oid: 103,
-          num: num,
-          date: moment().format("MMM Do YY"),
-          email: email,
-          name: name,
-          status: active ? "פעיל": "לא פעיל" 
-        });
-
-        setLoading(false);
+        let result = await fetch('http://localhost:8080/api/addCompany', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body:
+                        JSON.stringify(data)
+                    ,
+                    mode: 'cors',
+        })  
+        console.log(result);
+        navigate('ViewCompanies')
 
       } catch (error) {
         console.error("Error adding document:", error);
