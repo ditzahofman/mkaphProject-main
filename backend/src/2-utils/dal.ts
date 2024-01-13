@@ -1,25 +1,13 @@
-import mysql from "mysql";
+
+import * as admin from 'firebase-admin';
 import appConfig from "./appConfig";
 
-const connection = mysql.createPool({
-    host: appConfig.host,
-    user: appConfig.user,
-    password: appConfig.password,
-    database: appConfig.database
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+  databaseURL: appConfig.firebaseConfig.databaseURL,
 });
 
-function execute(sql: string,values?:any[]): Promise<any> {
-    return new Promise<any>((resolve, reject) => {
-        connection.query(sql, values,(err, result)=>{
-            if(err) {
-                reject(err);
-                return;
-            }
-            resolve(result);
-        });
-    });
-}
+const db = admin.firestore();
 
-export default {
-    execute
-};
+export { db };
+

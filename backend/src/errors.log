@@ -1,0 +1,42 @@
+Sat, 13 Jan 2024 22:00:59 GMT
+catchAll error
+Stack: Error: Value for argument "data" is not a valid Firestore document. Couldn't serialize object of type "InvesmentCompanyModel". Firestore doesn't support JavaScript objects with custom prototypes (i.e. objects that were created via the "new" operator).
+    at validateDocumentData (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\@google-cloud\firestore\build\src\write-batch.js:595:15)
+    at CollectionReference.add (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\@google-cloud\firestore\build\src\reference.js:2368:48)
+    at Object.<anonymous> (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:6:50)
+    at step (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:33:23)
+    at Object.next (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:14:53)
+    at C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:4:12)
+    at Object.addCompany (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:41:12)
+    at C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\6-controllers\companies-controllers.ts:13:38
+----------------------------------------------------------------------------------------------------
+Sat, 13 Jan 2024 22:11:54 GMT
+catchAll error
+Stack: TypeError: Cannot read properties of undefined (reading 'companyId')
+    at new InvesmentCompanyModel (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\4-models\invesmentHouse-model.ts:11:36)
+    at TransformOperationExecutor.transform (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\src\TransformOperationExecutor.ts:160:22)
+    at ClassTransformer.plainToInstance (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\src\ClassTransformer.ts:77:21)
+    at plainToClass (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\src\index.ts:71:27)
+    at Object.<anonymous> (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:8:39)
+    at step (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:33:23)
+    at Object.next (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:14:53)
+    at C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:4:12)
+----------------------------------------------------------------------------------------------------
+Sat, 13 Jan 2024 22:13:56 GMT
+catchAll error
+Stack: TypeError: Cannot read properties of undefined (reading 'companyId')
+    at new InvesmentCompanyModel (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\4-models\invesmentHouse-model.ts:11:36)
+    at TransformOperationExecutor.transform (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\src\TransformOperationExecutor.ts:160:22)
+    at ClassTransformer.plainToInstance (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\src\ClassTransformer.ts:77:21)
+    at plainToClass (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\node_modules\src\index.ts:71:27)
+    at Object.<anonymous> (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:8:39)
+    at step (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:33:23)
+    at Object.next (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:14:53)
+    at C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\דיצה 1\Documents\halacha\mkaphProject-main\mkaphProject-main\backend\src\5-logic\companies-logic.ts:4:12)
+----------------------------------------------------------------------------------------------------
