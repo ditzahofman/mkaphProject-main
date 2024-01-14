@@ -2,6 +2,7 @@ import { db } from '../2-utils/dal';
 import InvesmentCompanyModel from '../4-models/invesmentHouse-model';
 import { plainToClass } from 'class-transformer';
 
+
 async function addCompany(company: InvesmentCompanyModel): Promise<void> {
     try {
       // Convert the instance to a plain object
@@ -17,7 +18,18 @@ async function addCompany(company: InvesmentCompanyModel): Promise<void> {
     }
   }
 
+async function  getAllCompanies (){
+    try {
+      const allCompanies = await db.collection("InvestmentCompany").get()
+    return allCompanies
+    } catch(error:any) { 
+   console.log(error.message)
+    }
+  }
+  
+
  
 export default{
-    addCompany
-}
+    addCompany,
+    getAllCompanies
+  }
